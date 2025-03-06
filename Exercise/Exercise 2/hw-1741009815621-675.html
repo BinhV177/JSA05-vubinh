@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Khai báo một biến String và thực hiện các thao tác
+let text = "Hello";
+let text2 = "World";
+
+// Nối chuỗi
+let combinedText = text + " " + text2;
+console.log("Chuỗi nối:", combinedText);
+
+// Cắt chuỗi (lấy 3 ký tự đầu)
+let substring = combinedText.substring(0, 3);
+console.log("Cắt chuỗi:", substring);
+
+// Độ dài chuỗi
+let length = combinedText.length;
+console.log("Độ dài chuỗi:", length);
+
+// 2. Nhập một chuỗi từ người dùng và in hoa
+let userInput = prompt("Nhập vào một chuỗi:");
+console.log("Chuỗi viết hoa:", userInput.toUpperCase());
+
+// 3. Nhập tên và tuổi từ người dùng
+let name = prompt("Nhập tên của bạn:");
+let age = prompt("Nhập tuổi của bạn:");
+console.log(`Tên bạn là ${name} và bạn ${age} tuổi.`);
+
+// 4. Nhận câu từ người dùng, đếm số ký tự và độ dài câu
+let sentence = prompt("Nhập một câu:");
+
+// Đếm số ký tự (không tính khoảng trắng)
+let charCount = sentence.replace(/\s/g, "").length;
+
+// Độ dài câu (bao gồm cả khoảng trắng)
+let sentenceLength = sentence.length;
+
+console.log(`Số ký tự không tính khoảng trắng: ${charCount}`);
+console.log(`Độ dài của câu: ${sentenceLength}`);
+
+    </script>
+</body>
+</html>

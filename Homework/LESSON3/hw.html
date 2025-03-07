@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let numbers = [3, 8, 15, 2, 10, 7, 6, 1, 12, 9];
+
+
+let sumEven = 0, sumOdd = 0, threshold = 5, countGreater = 0;
+
+
+for (let num of numbers) {
+    if (num % 2 === 0) {
+        sumEven += num; 
+    } else {
+        sumOdd += num;  
+    }
+
+    if (num > threshold) {
+        countGreater++; 
+    }
+}
+
+// 4. Xuất kết quả ra console
+console.log("Mảng:", numbers);
+console.log("Tổng số chẵn:", sumEven);
+console.log("Tổng số lẻ:", sumOdd);
+console.log(`Số lượng phần tử lớn hơn ${threshold}:`, countGreater);
+
+
+    </script>
+</body>
+</html>

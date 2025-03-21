@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ cá nhân</title>
+</head>
+<body>
+    <h2>Thông tin cá nhân</h2>
+    <input type="text" id="name" placeholder="Họ và tên">
+    <input type="email" id="email" placeholder="Email">
+    <input type="tel" id="phone" placeholder="Số điện thoại">
+    <input type="text" id="address" placeholder="Địa chỉ">
+    <input type="url" id="avatar" placeholder="URL ảnh đại diện">
+    <button onclick="saveProfile()">Lưu hồ sơ</button>
+
+    <h2>Hồ sơ của bạn</h2>
+    <p id="displayName"></p>
+    <p id="displayEmail"></p>
+    <p id="displayPhone"></p>
+    <p id="displayAddress"></p>
+    <img id="displayAvatar" src="" alt="Ảnh đại diện" width="100">
+
+    <script>
+        function saveProfile() {
+            let profile = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                address: document.getElementById("address").value,
+                avatar: document.getElementById("avatar").value
+            };
+            localStorage.setItem("userProfile", JSON.stringify(profile));
+            loadProfile();
+        }
+
+        function loadProfile() {
+            let profile = JSON.parse(localStorage.getItem("userProfile"));
+            if (profile) {
+                document.getElementById("displayName").textContent = "Tên: " + profile.name;
+                document.getElementById("displayEmail").textContent = "Email: " + profile.email;
+                document.getElementById("displayPhone").textContent = "SĐT: " + profile.phone;
+                document.getElementById("displayAddress").textContent = "Địa chỉ: " + profile.address;
+                document.getElementById("displayAvatar").src = profile.avatar;
+            }
+        }
+
+        window.onload = loadProfile;
+    </script>
+</body>
+</html>
